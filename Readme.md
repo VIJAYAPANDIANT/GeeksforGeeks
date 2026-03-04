@@ -15,8 +15,6 @@ This repository contains my solutions to the **GeeksforGeeks 50 Days of DSA** ch
 
 ## 📂 Day-by-Day Solutions
 
-### 🔹 Arrays
-
 ### Day 1: [Second Largest](file:///c:/GeeksforGeeks/Array/Day1.java)
 
 - **Problem:** Find the second largest element in a positive integer array. If it doesn't exist, return -1.
@@ -156,8 +154,6 @@ This repository contains my solutions to the **GeeksforGeeks 50 Days of DSA** ch
 - **Problem:** Find max subarray sum in a circular array.
 - **Step-by-Step Logic:** Result is `max(Standard Kadane's, Total Sum - Min Subarray Sum)`.
 - **Complexity:** Time: $O(n)$, Space: $O(1)$.
-
-### 🔹 Strings
 
 ### Day 18: [Anagram](file:///c:/GeeksforGeeks/String/Day18.java)
 
