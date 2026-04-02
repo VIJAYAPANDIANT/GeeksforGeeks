@@ -148,20 +148,267 @@ Categorized logic and complexity for each problem.
 </details>
 
 <details>
-<summary>Day 6-10: Max Profits & Subarrays</summary>
+<summary>Day 6: Stock Buy and Sell – Max one Transaction</summary>
 
-- **Kadane's Algorithm:** Tracking local and global max sums.
-- **Stock Buy/Sell:** Optimized greedy or peak-valley approach.
-- **Majority Element:** Boyer-Moore Voting algorithm.
-- **Max Product Subarray:** Tracking max/min prefixes.
+- **Problem:** Maximize profit by buying once and selling once.
+- **Logic:** Track minimum price seen so far and calculate potential profit at each step.
+- **Complexity:** $O(n)$ Time, $O(1) $ Space.
 </details>
 
 <details>
-<summary>Day 11-17: Optimized Array Problems</summary>
+<summary>Day 7: Majority Element - More Than n/3</summary>
 
-- **Missing Number:** Index-marking/Sum/XOR methods.
-- **Sliding Window:** Maximize 1s, Subarray Sums.
-- **Circular Sum:** Total sum - Min subarray sum.
+- **Problem:** Find all elements that appear more than $n/3$ times.
+- **Logic:** Boyer-Moore Voting algorithm with two candidates and a second pass for verification.
+- **Complexity:** $O(n)$ Time, $O(1) $ Space.
+</details>
+
+<details>
+<summary>Day 8: Kadane's Algorithm</summary>
+
+- **Problem:** Find the maximum sum of a contiguous subarray.
+- **Logic:** Maintain `currMax` and `globalMax`, resetting `currMax` to 0 if it becomes negative.
+- **Complexity:** $O(n)$ Time, $O(1) $ Space.
+</details>
+
+<details>
+<summary>Day 9: Stock Buy and Sell – Multiple Transaction</summary>
+
+- **Problem:** Maximize profit by buying and selling multiple times.
+- **Logic:** Accumulate profit whenever the current price is higher than the previous day's price.
+- **Complexity:** $O(n)$ Time, $O(1) $ Space.
+</details>
+
+<details>
+<summary>Day 10: Maximum Product Subarray</summary>
+
+- **Problem:** Find the contiguous subarray within an array that has the largest product.
+- **Logic:** Track both maximum and minimum product (for negative numbers) ending at the current position.
+- **Complexity:** $O(n)$ Time, $O(1) $ Space.
+</details>
+
+<details>
+<summary>Day 11: Minimize the Heights II</summary>
+
+- **Problem:** Minimize the difference between tallest and shortest tower after adding/subtracting $k$.
+- **Logic:** Sort the array and check potential min/max height differences at each gap.
+- **Complexity:** $O(n \log n)$ Time, $O(1) $ Space.
+</details>
+
+<details>
+<summary>Day 12: Smallest Positive Missing</summary>
+
+- **Problem:** Find the smallest positive integer missing from an unsorted array.
+- **Logic:** Use index-marking (negating values at specific indices) to track seen numbers in-place.
+- **Complexity:** $O(n)$ Time, $O(1) $ Space.
+</details>
+
+<details>
+<summary>Day 13: Repetitive Addition of Digits</summary>
+
+- **Problem:** Repeatedly add digits until a single-digit number is obtained.
+- **Logic:** Iterative digit sum calculation or using the digital root formula.
+- **Complexity:** $O(\log_{10} n)$ Time, $O(1) $ Space.
+</details>
+
+<details>
+<summary>Day 14: Last Moment Before Ants Fall Out</summary>
+
+- **Problem:** Find the time when the last ant falls off a plank.
+- **Logic:** Ants passing each other is equivalent to them "passing through" each other; find the max distance any ant travel.
+- **Complexity:** $O(n)$ Time, $O(1) $ Space.
+</details>
+
+<details>
+<summary>Day 15: Split Array in Three Equal Sum Subarrays</summary>
+
+- **Problem:** Determine if array can be split into 3 parts with equal sum.
+- **Logic:** Calculate total sum, check for divisibility by 3, and find cumulative sum breakpoints.
+- **Complexity:** $O(n)$ Time, $O(1) $ Space.
+</details>
+
+<details>
+<summary>Day 16: Maximize Number of 1's</summary>
+
+- **Problem:** Find the max consecutive 1s after flipping at most $k$ zeros.
+- **Logic:** Sliding window approach tracking the number of zeros in the current window.
+- **Complexity:** $O(n)$ Time, $O(1) $ Space.
+</details>
+
+<details>
+<summary>Day 17: Max Circular Subarray Sum</summary>
+
+- **Problem:** Find max subarray sum in a circular array.
+- **Logic:** Result is `max(Kadane(arr), TotalSum - MinKadane(arr))`.
+- **Complexity:** $O(n)$ Time, $O(1) $ Space.
+</details>
+
+<details>
+<summary>Day 29: Min and Max in Array</summary>
+
+- **Problem:** Find the minimum and maximum elements in an array.
+- **Logic:** Single pass comparison to update `min` and `max` values.
+- **Complexity:** $O(n)$ Time, $O(1)$ Space.
+</details>
+
+<details>
+<summary>Day 30: Indexes of Subarray Sum</summary>
+
+- **Problem:** Find a continuous subarray whose sum equals a target.
+- **Logic:** Two-pointer (sliding window) approach to maintain the current sum.
+- **Complexity:** $O(n)$ Time, $O(1)$ Space.
+</details>
+
+<details>
+<summary>Day 31: Minimum Jumps</summary>
+
+- **Problem:** Minimum jumps to reach the end of the array.
+- **Logic:** Greedy approach tracking the maximum reachable index and updating jumps at each step.
+- **Complexity:** $O(n)$ Time, $O(1)$ Space.
+</details>
+
+<details>
+<summary>Day 32: Array Leaders</summary>
+
+- **Problem:** Find all elements that are greater than or equal to all elements to their right.
+- **Logic:** Traverse from right to left, keeping track of the maximum element seen so far.
+- **Complexity:** $O(n)$ Time, $O(n)$ Space (for output).
+</details>
+
+<details>
+<summary>Day 33: Array Duplicates</summary>
+
+- **Problem:** Find all duplicates in an array containing elements from 1 to n.
+- **Logic:** Use the array itself as a hash table by negating values at indices corresponding to the element values.
+- **Complexity:** $O(n)$ Time, $O(1)$ Space.
+</details>
+
+<details>
+<summary>Day 34: Sort 0s, 1s and 2s</summary>
+
+- **Problem:** Sort an array of 0s, 1s, and 2s without built-in functions.
+- **Logic:** Dutch National Flag algorithm using three pointers (`low`, `mid`, `high`).
+- **Complexity:** $O(n)$ Time, $O(1)$ Space.
+</details>
+
+<details>
+<summary>Day 35: Kth Smallest</summary>
+
+- **Problem:** Find the Kth smallest element in an array.
+- **Logic:** QuickSelect algorithm (average $O(n)$) or PriorityQueue ($O(n \log k)$).
+- **Complexity:** $O(n)$ Average Time, $O(1)$ Space.
+</details>
+
+<details>
+<summary>Day 36: Parenthesis Checker</summary>
+
+- **Problem:** Determine if an expression with brackets is balanced.
+- **Logic:** Use a stack to match opening and closing brackets in the correct order.
+- **Complexity:** $O(n)$ Time, $O(n)$ Space.
+</details>
+
+<details>
+<summary>Day 37: Missing And Repeating</summary>
+
+- **Problem:** Find one missing and one repeating number in range 1 to n.
+- **Logic:** Index-based marking or mathematical sum/square sum differences.
+- **Complexity:** $O(n)$ Time, $O(1)$ Space.
+</details>
+
+<details>
+<summary>Day 38: Array Search</summary>
+
+- **Problem:** Find the first occurrence of an element x in an array.
+- **Logic:** Linear search through the array.
+- **Complexity:** $O(n)$ Time, $O(1)$ Space.
+</details>
+
+<details>
+<summary>Day 39: Array Subset</summary>
+
+- **Problem:** Determine whether array b is a subset of array a.
+- **Logic:** Frequency map using a HashMap to store counts of elements in array a.
+- **Complexity:** $O(n+m)$ Time, $O(n)$ Space.
+</details>
+
+<details>
+<summary>Day 40: Detect Loop in Linked List</summary>
+
+- **Problem:** Determine if a singly linked list contains a loop.
+- **Logic:** Floyd's Cycle-Finding algorithm (Slow and Fast pointers).
+- **Complexity:** $O(n)$ Time, $O(1)$ Space.
+</details>
+
+<details>
+<summary>Day 41: BFS of graph</summary>
+
+- **Problem:** Perform BFS traversal starting from vertex 0.
+- **Logic:** Queue-based level-by-level traversal using a visited array.
+- **Complexity:** $O(V+E)$ Time, $O(V)$ Space.
+</details>
+
+<details>
+<summary>Day 43: Missing in Array</summary>
+
+- **Problem:** Find the missing element in a permutation of 1 to n.
+- **Logic:** Use the sum formula `n*(n+1)/2` or XOR all elements and numbers from 1 to n.
+- **Complexity:** $O(n)$ Time, $O(1)$ Space.
+</details>
+
+<details>
+<summary>Day 44: Equilibrium Point</summary>
+
+- **Problem:** Find the first index where sum of left elements equals sum of right elements.
+- **Logic:** Precalculate total sum and subtract elements while traversing to find the point.
+- **Complexity:** $O(n)$ Time, $O(1)$ Space.
+</details>
+
+<details>
+<summary>Day 45: Floor in a Sorted Array</summary>
+
+- **Problem:** Find the largest element less than or equal to x.
+- **Logic:** Binary search to find the rightmost valid candidate.
+- **Complexity:** $O(\log n)$ Time, $O(1)$ Space.
+</details>
+
+<details>
+<summary>Day 46: Largest in Array</summary>
+
+- **Problem:** Find the largest element in an array.
+- **Logic:** Single pass maximum tracking.
+- **Complexity:** $O(n)$ Time, $O(1)$ Space.
+</details>
+
+<details>
+<summary>Day 47: Value equal to index value</summary>
+
+- **Problem:** Find elements whose value equals their 1-based index.
+- **Logic:** Linear scan checking `arr[i] == i + 1`.
+- **Complexity:** $O(n)$ Time, $O(1)$ Space.
+</details>
+
+<details>
+<summary>Day 48: Alternate Positive Negative</summary>
+
+- **Problem:** Rearrange array into alternating positive/negative numbers.
+- **Logic:** Separate positives and negatives into two lists and merge them alternately.
+- **Complexity:** $O(n)$ Time, $O(n)$ Space.
+</details>
+
+<details>
+<summary>Day 49: Two Stacks in an Array</summary>
+
+- **Problem:** Implement two stacks in a single fixed-size array.
+- **Logic:** Grow stack 1 from left to right and stack 2 from right to left.
+- **Complexity:** $O(1)$ push/pop, $O(n)$ Space.
+</details>
+
+<details>
+<summary>Day 50: Array End Insert</summary>
+
+- **Problem:** Insert a value at the end of an array or ArrayList.
+- **Logic:** Direct assignment at index or using `ArrayList.add()`.
+- **Complexity:** $O(1)$ Time, $O(1)$ Space.
 </details>
 
 ### 🔹 String
@@ -174,19 +421,83 @@ Categorized logic and complexity for each problem.
 </details>
 
 <details>
-<summary>Day 19-21: Pattern Matching & Palindromes</summary>
+<summary>Day 19: Non Repeating Character</summary>
 
-- **Non-Repeating Char:** Frequency map + double traversal.
-- **KMP Algorithm:** Using LPS array for $O(n)$ pattern matching.
-- **Binary Addition:** Right-to-left carry tracking.
+- **Problem:** Return the first non-repeating character in a string.
+- **Logic:** Frequency map (int[26]) plus a second pass to find the first character with count 1.
+- **Complexity:** $O(n)$ Time, $O(1)$ Space.
 </details>
 
 <details>
-<summary>Day 22-28: String Manipulations</summary>
+<summary>Day 20: Search Pattern</summary>
 
-- **Atoi Implementation:** Handling edge cases (overflow, signs).
-- **CamelCase:** Regex or manual upper-case extraction.
-- **String Repeats:** Mathematical validation of substring presence.
+- **Problem:** Print all 0-based indexes of pattern `pat` in text `txt`.
+- **Logic:** Sliding window string matching or KMP algorithm for efficiency.
+- **Complexity:** $O(n \times m)$ Time, $O(1)$ Space.
+</details>
+
+<details>
+<summary>Day 21: Min Chars to Add for Palindrome</summary>
+
+- **Problem:** Min characters to add at the front to make a string a palindrome.
+- **Logic:** LPS array from KMP on `s + "#" + reverse(s)`.
+- **Complexity:** $O(n)$ Time, $O(n)$ Space.
+</details>
+
+<details>
+<summary>Day 22: Fizz Buzz</summary>
+
+- **Problem:** Classic FizzBuzz up to n.
+- **Logic:** Loop through numbers, check divisibility by 3, 5, or both (15).
+- **Complexity:** $O(n)$ Time, $O(n)$ Space.
+</details>
+
+<details>
+<summary>Day 23: Palindrome Sentence</summary>
+
+- **Problem:** Check if a sentence is a palindrome after cleaning non-alphanumeric chars.
+- **Logic:** Two-pointer approach bypassing non-alphanumeric characters.
+- **Complexity:** $O(n)$ Time, $O(1)$ Space.
+</details>
+
+<details>
+<summary>Day 24: CamelCase Pattern Matching</summary>
+
+- **Problem:** Match words against a capital letter pattern.
+- **Logic:** Extract all capital letters from each word and check if the pattern is a prefix.
+- **Complexity:** $O(N \times L)$ Time, $O(L)$ Space.
+</details>
+
+<details>
+<summary>Day 25: Longest Prefix Suffix</summary>
+
+- **Problem:** Find the length of the longest proper prefix which is also a suffix.
+- **Logic:** Preprocessing step of KMP (building the LPS array).
+- **Complexity:** $O(n)$ Time, $O(n)$ Space.
+</details>
+
+<details>
+<summary>Day 26: Add Binary Strings</summary>
+
+- **Problem:** Return the sum of two binary strings.
+- **Logic:** Right-to-left addition with carry propagation, then reverse and clean leading zeros.
+- **Complexity:** $O(n)$ Time, $O(n)$ Space.
+</details>
+
+<details>
+<summary>Day 27: Implement Atoi</summary>
+
+- **Problem:** Convert a string to an integer without built-in functions.
+- **Logic:** Handle leading spaces, signs, and digits with overflow checks.
+- **Complexity:** $O(n)$ Time, $O(1)$ Space.
+</details>
+
+<details>
+<summary>Day 28: Minimum repeat to make substring</summary>
+
+- **Problem:** Min times s1 must repeat to contain s2 as a substring.
+- **Logic:** Repeatedly append s1 until length >= s2, check twice with KMP.
+- **Complexity:** $O(n + m)$ Time, $O(m)$ Space.
 </details>
 
 ### 🔹 Dynamic Programming & Graphs
